@@ -10,6 +10,7 @@ int main()
 {
     srand(static_cast<unsigned int>(time(0)));
     int lives = 3;
+    int money = 100;
     int coordinate_y = 0;
     int coordinate_x = 0;
     string direction;
@@ -41,7 +42,8 @@ int main()
             cout << "You went north." << endl;
             coordinate_y++;
             cout << events[arrayChooser].getDescription() << endl;
-            lives -= events[arrayChooser].getHealthIncr();
+            lives += events[arrayChooser].getHealthIncr();
+            money += events[arrayChooser].getMonethIncr();       
         }
         else if (direction == "west")
         {
