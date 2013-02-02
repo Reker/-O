@@ -15,12 +15,12 @@ int main()
     string direction;
     int arrayChooser = 0;
     
-    std::vector<GameEvents> events(3);
+    std::vector<GameEvent> events;
 
     // Initial events vector
-    events[0] = new GameEvents("You find 100 gold", 100, 0);
-    events[1] = new GameEvents("You get 1 life", 0, 1);
-    events[2] = new GameEvents("You find 80 gold but lost 3 lives", 80, -3);
+    events.push_back(GameEvent("You find 100 gold", 100, 0));
+    events.push_back(GameEvent("You get 1 life", 0, 1));
+    events.push_back(GameEvent("You find 80 gold but lost 3 lives", 80, -3));
  
 
     //string events[2] {"You find 100 gold", "You get 1 life"};
