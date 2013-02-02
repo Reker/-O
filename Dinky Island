@@ -13,7 +13,7 @@ int main()
     int coordinate_y = 0;
     int coordinate_x = 0;
     string direction;
-    int arrayChooser = rand() % 2;
+    int arrayChooser = 0;
     
     std::vector<GameEvents> events(3);
 
@@ -33,6 +33,8 @@ int main()
     while (lives >= 0)
     {
         cin >> direction;
+
+        arrayChooser = rand() % events.size();
         
         if (direction == "north")
         {
@@ -41,23 +43,27 @@ int main()
             cout << events[arrayChooser].getDescription() << endl;
             lives -= events[arrayChooser].getHealthIncr();
         }
-        if (direction == "west")
+        else if (direction == "west")
         {
             cout << "You went west." << endl;
             coordinate_x--;
 
         }
-        if (direction == "south")
+        else if (direction == "south")
         {
             cout << "You went south." << endl;
             coordinate_y--;
 
         }
-        if (direction == "east")
+        else if (direction == "east")
         {
             cout << "You went east." << endl;
             coordinate_x++;
 
+        }
+        else
+        {
+            // User has provided an unknown direction, scold them!
         }
     }
 
